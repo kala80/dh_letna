@@ -4,11 +4,35 @@
   var toggle = document.querySelector('.nav__toggle');
   var nav = document.querySelector('.nav');
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
+    var backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openMenu() {
+      nav.classList.add('open');
+      backdrop.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      nav.classList.remove('open');
+      backdrop.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (nav.classList.contains('open')) closeMenu(); else openMenu();
     });
+    backdrop.addEventListener('click', closeMenu);
     nav.querySelectorAll('.nav__links a').forEach(function (a) {
-      a.addEventListener('click', function () { nav.classList.remove('open'); });
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    // Close if resized up to desktop
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 720) closeMenu();
     });
   }
 
