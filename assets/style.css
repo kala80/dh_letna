@@ -192,6 +192,23 @@ a { color: var(--mint-600); text-decoration: none; }
 
 .hero__art { position: relative; }
 .hero__blob { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 50px rgba(16,110,96,.18)); }
+
+/* Hero photo (organic frame) */
+.hero__photo {
+  position: relative; width: 100%; max-width: 460px; margin: 0 0 0 auto;
+  aspect-ratio: 1 / 1; overflow: hidden;
+  border-radius: 46% 54% 52% 48% / 52% 46% 54% 48%;
+  box-shadow: 0 30px 60px rgba(16,110,96,.22);
+  z-index: 1;
+}
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__art::before {
+  content: ""; position: absolute; z-index: 0;
+  width: 82%; aspect-ratio: 1/1; right: -4%; top: 14%;
+  background: linear-gradient(135deg, var(--mint-400), var(--mint-600));
+  border-radius: 42% 58% 55% 45% / 48% 50% 50% 52%;
+  opacity: .18;
+}
 .floaty { position: absolute; animation: float 6s ease-in-out infinite; }
 .floaty--1 { top: 4%; right: 6%; animation-delay: .2s; }
 .floaty--2 { bottom: 12%; left: -2%; animation-delay: 1.4s; }
