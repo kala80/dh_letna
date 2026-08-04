@@ -418,6 +418,29 @@ a { color: var(--mint-600); text-decoration: none; }
 .cta-strip > * { position: relative; z-index: 1; }
 .cta-strip h2 { color:#fff; }
 .cta-strip p { color: rgba(255,255,255,.94); max-width: 520px; margin: 0 auto 26px; }
+.cta-strip .btn--ghost { color: var(--coral-600); }
+.cta-strip .btn--ghost:hover { color: var(--coral-700, #2c649f); background: #fff; }
+
+/* Full-width CTA band */
+.cta-band {
+  position: relative; overflow: hidden; text-align: center;
+  background: linear-gradient(135deg, var(--coral-400), var(--coral-500));
+  color: #fff; padding: 86px 0;
+}
+.cta-band::before {
+  content: ""; position: absolute; top: -90px; right: -50px; width: 280px; height: 280px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.16), transparent 70%);
+}
+.cta-band::after {
+  content: ""; position: absolute; bottom: -100px; left: -60px; width: 260px; height: 260px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.12), transparent 70%);
+}
+.cta-band .wrap { position: relative; z-index: 1; }
+.cta-band h2 { color: #fff; }
+.cta-band p { color: rgba(255,255,255,.94); max-width: 540px; margin: 0 auto 28px; }
+.cta-band .btn--ghost { color: var(--coral-600); }
+.cta-band .btn--ghost:hover { color: var(--coral-700, #2c649f); background: #fff; transform: translateY(-3px); }
+@media (max-width: 720px) { .cta-band { padding: 56px 0; } }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: #c7d4d9; padding: 60px 0 26px; margin-top: 20px; }
