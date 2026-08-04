@@ -396,6 +396,16 @@ a { color: var(--mint-600); text-decoration: none; }
 .footer__links { list-style:none; padding:0; margin:0; display:grid; gap: 10px; }
 .footer__brand .brand__name { color:#fff; }
 .footer__brand p { color:#8fa2a9; font-size: .95rem; }
+.footer__badge {
+  display: inline-flex; align-items: center; gap: 9px; margin-top: 14px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px; padding: 8px 15px 8px 12px;
+  font-family: var(--font-head); font-weight: 600; font-size: .82rem; color: #d7e2e6;
+  transition: background .2s, border-color .2s;
+}
+.footer__badge:hover { background: rgba(255,255,255,.12); border-color: var(--mint-400); color: #fff; }
+.footer__badge svg { width: 17px; height: 17px; color: #ffce4a; flex: none; }
+.footer__badge b { color: var(--mint-400); font-weight: 700; }
 .footer__bottom {
   margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1);
   display:flex; justify-content:space-between; gap: 16px; flex-wrap: wrap;
