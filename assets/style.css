@@ -183,12 +183,12 @@ a { color: var(--mint-600); text-decoration: none; }
   background: radial-gradient(46% 56% at 4% 3%, rgba(255,255,255,.55), transparent 55%), #ecf8f4;
 }
 .hero__bg {
-  position: absolute; top: 0; right: 0; bottom: 0; width: 66%;
-  background: url("img/hero-bg.jpg") right bottom / auto 112% no-repeat;
+  position: absolute; top: 0; right: 0; bottom: 0; width: 56%;
+  background: url("img/hero-bg.jpg") 50% 50% / cover no-repeat;
 }
 .hero__bg::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, #ecf8f4 0%, #ecf8f4 30%, rgba(236,248,244,.9) 44%, rgba(236,248,244,0) 64%);
+  background: linear-gradient(90deg, #ecf8f4 0%, #ecf8f4 8%, rgba(236,248,244,.6) 30%, rgba(236,248,244,0) 62%);
 }
 .hero__title { font-size: clamp(2.9rem, 6vw, 4.7rem); line-height: 1.05; letter-spacing: -.02em; }
 .hero__sparkle { position: absolute; color: rgba(255,255,255,.92); animation: float 7s ease-in-out infinite; }
