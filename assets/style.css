@@ -178,17 +178,17 @@ a { color: var(--mint-600); text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative; overflow: hidden;
-  min-height: clamp(540px, 76vh, 780px);
+  min-height: clamp(600px, 86vh, 880px);
   display: flex; align-items: center;
   background: #ecf8f4;
 }
 .hero__bg {
   position: absolute; inset: 0; width: 100%;
-  background: url("img/hero-bg.jpg") 50% 48% / cover no-repeat;
+  background: url("img/hero-bg.jpg") 50% 52% / cover no-repeat;
 }
 .hero__bg::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(236,248,244,.96) 0%, rgba(236,248,244,.82) 26%, rgba(236,248,244,.34) 48%, rgba(236,248,244,0) 68%);
+  background: linear-gradient(90deg, rgba(236,248,244,.98) 0%, rgba(236,248,244,.92) 32%, rgba(236,248,244,.5) 52%, rgba(236,248,244,0) 74%);
 }
 .hero__title { font-size: clamp(2.9rem, 6vw, 4.7rem); line-height: 1.05; letter-spacing: -.02em; }
 .hero__sparkle { position: absolute; color: rgba(255,255,255,.92); animation: float 7s ease-in-out infinite; }
