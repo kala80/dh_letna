@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dh-letna.cz/sitemap.xml
