@@ -93,7 +93,7 @@
     setInterval(function(){
       i=(i+1)%words.length;
       el.style.opacity='0';
-      setTimeout(function(){ el.textContent=words[i]; el.style.opacity='1'; },350);
+      setTimeout(function(){ el.innerHTML=words[i]; el.style.opacity='1'; },350);
     },3800);
   });
 })();

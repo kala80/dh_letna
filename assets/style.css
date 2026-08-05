@@ -17,6 +17,8 @@
   --coral-400: #5b95cf;
   --coral-500: #3a7cbe;
   --coral-600: #2c649f;
+  --pink: #e01b76;
+  --pink-soft: #f7d0e4;
 
   --peach:   #eef5fb;
   --cream:   #ffffff;
@@ -691,3 +693,27 @@ a { color: var(--mint-600); text-decoration: none; }
   .hero .hero__points li { background: var(--mint-50); border-color: var(--mint-200); color: var(--ink); }
   .btn--lg { padding: 15px 28px; font-size: 1rem; }
 }
+
+
+/* ---------- Hero headline: wider + fixed 3-line height (no layout shift) ---------- */
+.hero__copy { max-width: 660px; }
+.hero .hero__title { font-size: clamp(2.35rem, 4.6vw, 3.8rem); line-height: 1.08; min-height: 3.3em; }
+.hero .hero__title .rotator { display: block; }
+@media (max-width: 860px) {
+  .hero .hero__title { font-size: clamp(2rem, 8vw, 2.6rem); min-height: 3.35em; }
+}
+
+
+/* ---------- Vizitka accent: pink stripe + highlighted claim words ---------- */
+.hero__bg::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(104deg, transparent 30%, rgba(224,27,118,.32) 41%, rgba(224,27,118,.12) 50%, transparent 60%);
+}
+.rotator em { font-style: normal; color: #ff5aa8; }
+@media (max-width: 860px){ .rotator em { color: var(--pink); } }
+.review__stars, .hero__rating .stars { color: #f5b301; }
+.footer__links a.fb:hover { color: #4a7fd6; }
+
+
+/* FULLWIDTH-HEADER: menu přes celou šířku */
+.site-header .wrap { max-width: none; padding: 0 clamp(20px, 4vw, 60px); }
