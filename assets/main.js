@@ -82,3 +82,18 @@
     rings.forEach(function (r) { rio.observe(r); });
   }
 })();
+
+
+// Hero headline rotator
+(function(){
+  document.querySelectorAll('.rotator').forEach(function(el){
+    var words=(el.getAttribute('data-words')||'').split('|').filter(Boolean);
+    if(words.length<2) return;
+    var i=0;
+    setInterval(function(){
+      i=(i+1)%words.length;
+      el.style.opacity='0';
+      setTimeout(function(){ el.textContent=words[i]; el.style.opacity='1'; },350);
+    },3800);
+  });
+})();
