@@ -717,3 +717,16 @@ a { color: var(--mint-600); text-decoration: none; }
 
 /* FULLWIDTH-HEADER: menu přes celou šířku */
 .site-header .wrap { max-width: none; padding: 0 clamp(20px, 4vw, 60px); }
+
+
+/* BAKED-HERO: pre-baked shadow+pink stripe image; text pinned left before stripe */
+.hero__bg { background-position: 50% 45%; }
+.hero__bg::before, .hero__bg::after { display: none !important; }
+.hero .wrap { max-width: none; padding-left: clamp(20px, 3vw, 62px); }
+.hero__copy { max-width: min(470px, 27vw); padding: 30px 0; }
+.hero .hero__title { font-size: clamp(1.85rem, 2.5vw, 2.75rem); line-height: 1.12; min-height: 5em; }
+@media (max-width: 860px) {
+  .hero .wrap { padding-left: 0; }
+  .hero__copy { max-width: none; }
+  .hero .hero__title { font-size: clamp(2rem, 8vw, 2.6rem); min-height: 3.4em; }
+}
