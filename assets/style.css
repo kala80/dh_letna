@@ -194,23 +194,21 @@ a { color: var(--mint-600); text-decoration: none; }
   min-height: 580px;
   display: flex;
   align-items: center;
-  background-color: #f5f6f4; /* Světlé podbarvení levé strany */
+  background-color: #f5f6f4;
 }
 
-/* Obrázek zasažený pouze do pravé části se zkosením */
+/* Ořez obrázku posunutý více doprava */
 .hero__bg {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 62%; /* Fotka zabírá pravých 62 % */
+  width: 55%; /* Zmenšeno, aby fotka nezasahovala do textu */
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  /* Zkosený přechod zleva doprava jako na návrhu */
-  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%); /* Posunutý bod ořezu */
   z-index: 1;
 }
 
-/* Zrušení starých tmaveých přechodů přes fotku */
 .hero__bg::before,
 .hero__bg::after {
   display: none !important;
@@ -220,17 +218,21 @@ a { color: var(--mint-600); text-decoration: none; }
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* Textový blok usazený plně do světlé levé části */
 .hero__copy {
-  max-width: 500px;
+  max-width: 480px; /* Zajišťuje, že se text zalomí ještě před fotkou */
+  margin-left: 0;   /* Zarovnání zcela do leva */
   padding: 40px 0;
 }
 
-/* Vynucení tmavého textu na světlém podkladu */
 .hero .hero__title {
   color: #1f2923 !important;
-  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   line-height: 1.15;
   font-weight: 400;
   margin-top: 0.3em;
@@ -239,9 +241,9 @@ a { color: var(--mint-600); text-decoration: none; }
 
 .hero p.lead {
   color: #525b56 !important;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.6;
-  max-width: 440px;
+  max-width: 420px;
 }
 
 .hero__copy .eyebrow {
@@ -249,6 +251,12 @@ a { color: var(--mint-600); text-decoration: none; }
   color: #6a785c !important;
 }
 
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
 /* Tlačítka */
 .hero__actions {
   display: flex;
