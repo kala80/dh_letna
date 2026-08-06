@@ -19,22 +19,22 @@
   --coral-400: #6a785c;  /* oliva (primární tlačítko – gradient) */
   --coral-500: #4e5b49;  /* oliva */
   --coral-600: #3c4738;  /* tmavá oliva (text) */
-  --pink: #8a9a7e;       /* ztlumená šalvěj (dříve růžová) */
+  --pink: #8a9a7e;        /* ztlumená šalvěj (dříve růžová) */
   --pink-soft: #dfe4d6;
 
-  --peach:   #f6f4ef;   /* teplá krémová (světlé sekce) */
+  --peach:   #f6f4ef;    /* teplá krémová (světlé sekce) */
   --cream:   #ffffff;
-  --sun:     #e8e5df;   /* teplá béžová */
+  --sun:     #e8e5df;    /* teplá béžová */
 
-  --ink:     #23282b;   /* uhlová */
+  --ink:     #23282b;    /* uhlová */
   --ink-soft:#4f5651;
-  --muted:   #8b8d88;   /* ztlumená šedá */
-  --line:    #ece9e3;   /* teplý okraj */
+  --muted:   #8b8d88;    /* ztlumená šedá */
+  --line:    #ece9e3;    /* teplý okraj */
 
   /* STŘÍDMÁ ELEGANTNÍ VARIANTA ZAOBLENÍ */
-  --radius:  10px;       /* Čistý, zjemněný roh karet */
-  --radius-lg: 14px;    /* Sekce, galerijní fotky a bannery */
-  --radius-btn: 8px;    /* Tlačítka s přirozeným zjemněním */
+  --radius:    10px;        /* Čistý, zjemněný roh karet */
+  --radius-lg: 14px;     /* Sekce, galerijní fotky a bannery */
+  --radius-btn: 8px;     /* Tlačítka s přirozeným zjemněním */
 
   --shadow-sm: 0 4px 14px rgba(60,71,56,.06);
   --shadow-md: 0 10px 30px rgba(60,71,56,.10);
@@ -698,6 +698,53 @@ a { color: var(--mint-600); text-decoration: none; }
 .hours { list-style:none; margin: 18px 0 0; padding: 0; }
 .hours li { display:flex; justify-content:space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .98rem; }
 .hours li b { font-family: var(--font-head); color: var(--ink); }
+
+/* ---------- Contact Entrance Photo & Navigation Button ---------- */
+.vchod-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.vchod-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+  display: block;
+  object-fit: cover;
+}
+
+.btn-navigate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--mint-600);
+  color: #ffffff;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 22px;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+
+.btn-navigate:hover {
+  background: var(--mint-700);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-navigate svg {
+  flex-shrink: 0;
+}
 
 /* ---------- Cookie Banner ---------- */
 .cookie-banner {
