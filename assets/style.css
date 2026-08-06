@@ -177,10 +177,6 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 .nav__links a:hover { color: var(--mint-600); }
 .nav__links a.is-active { color: var(--ink); font-weight: 600; }
-.nav__links a.is-active::after {
-  content: ""; position: absolute; left: 16px; right: 16px; bottom: 2px;
-  height: 2px; border-radius: 2px; background: var(--ink);
-}
 
 .nav__cta { display: flex; align-items: center; gap: 12px; }
 
@@ -215,8 +211,6 @@ a { color: var(--mint-600); text-decoration: none; }
   display: flex;
   align-items: center;
   background-color: #f7f7f5;
-  
-  /* Flexibilní výška ideální pro všechny monitory */
   min-height: clamp(600px, 75vh, 800px); 
 }
 
@@ -252,7 +246,7 @@ a { color: var(--mint-600); text-decoration: none; }
 
 .hero__copy .eyebrow {
   background: transparent !important;
-  color: #9aa095 !important; /* Tlumená šedozelená z návrhu */
+  color: #9aa095 !important;
   font-family: 'Nunito', var(--font-body) !important;
   font-weight: 600 !important;
   font-size: 0.75rem !important;
@@ -265,7 +259,7 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero .hero__title {
-  color: #2b332c !important; /* Základní tmavá barva pro "Dentální hygiena" */
+  color: #2b332c !important;
   font-family: 'Nunito', var(--font-body) !important;
   font-weight: 400 !important;
   font-size: clamp(2.4rem, 4.2vw, 3.6rem) !important;
@@ -276,8 +270,8 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero .hero__title span {
-  color: #4e5b49 !important; /* Olivově zelená barva z grafického návrhu */
-  font-weight: 600 !important; /* Mírně výraznější řez */
+  color: #8b8d88 !important;
+  font-weight: 300 !important;
   display: block;
 }
 
@@ -669,20 +663,80 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 @media (max-width: 860px) {
+  /* 1. Oprava hlavičky - menší tlačítko na mobilu, aby nepřekrývalo text */
+  .site-header .nav__cta .btn--primary {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .site-header .nav__cta svg {
+    display: none !important;
+  }
+
+  /* 2. Úprava Hero sekce pro mobil */
   .hero {
-    flex-direction: column;
-    min-height: auto;
-    background-color: #f7f7f5;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    min-height: auto !important;
+    background-color: #f7f7f5 !important;
+    padding-top: 20px !important;
   }
+
   .hero__bg {
-    position: relative;
-    width: 100%;
-    height: 320px;
-    clip-path: none;
+    position: relative !important;
+    width: 100% !important;
+    height: 240px !important;
+    clip-path: none !important;
+    border-radius: 16px !important;
+    margin-top: 20px !important;
   }
+
+  .hero .wrap {
+    padding: 0 20px !important;
+  }
+
   .hero__copy {
-    max-width: 100%;
-    padding: 30px 0;
+    max-width: 100% !important;
+    padding: 20px 0 0 0 !important;
+  }
+
+  .hero__copy .eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero .hero__title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero p.lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero__actions {
+    flex-direction: row !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  .hero__actions .btn {
+    flex: 1 !important;
+    justify-content: center !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* 3. Posun spodních karet výhod */
+  .hero-features {
+    margin-top: 20px !important;
+  }
+
+  .hero-features .wrap {
+    padding: 0 16px !important;
   }
 }
 
@@ -691,7 +745,6 @@ a { color: var(--mint-600); text-decoration: none; }
   .nav__toggle { display: block; z-index: 70; }
   .nav__cta { gap: 8px; }
   .nav__cta .btn--ghost { display: none; }
-  .nav__cta .btn--primary { padding: 10px 16px; font-size: .85rem; }
   .brand__sub { display: none; }
   .brand__logo { width: 38px; height: 38px; border-radius: 0; }
   .brand__logo svg { width: 36px; height: 36px; }
@@ -712,11 +765,6 @@ a { color: var(--mint-600); text-decoration: none; }
     font-family: var(--font-head); font-weight: 600; font-size: 1.05rem; color: var(--ink);
   }
   .nav__links a:hover, .nav__links a.is-active { background: var(--mint-50); color: var(--mint-700); }
-  .nav__links a.is-active { position: relative; }
-  .nav__links a.is-active::after {
-    content: ""; position: absolute; left: 18px; bottom: 9px; width: 22px; height: 3px;
-    border-radius: 3px; background: var(--mint-500);
-  }
 
   .nav__toggle span { transition: transform .25s ease, opacity .2s ease; }
   .nav.open .nav__toggle span:nth-child(1) { transform: translateY(6.6px) rotate(45deg); }
@@ -747,9 +795,6 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 @media (max-width: 640px) {
-  .hero-features {
-    margin-top: 0;
-  }
   .hero-features__grid {
     grid-template-columns: 1fr;
     padding: 20px;
@@ -770,11 +815,6 @@ a { color: var(--mint-600); text-decoration: none; }
   h1 { font-size: 2.05rem; }
   h2 { font-size: 1.55rem; }
   .brand__name { font-size: 1.05rem; }
-  .nav__cta .btn--primary { padding: 9px 14px; font-size: .82rem; }
-  .hero__bg { height: 240px; }
-  .hero__copy { padding: 22px 0 8px; }
-  .hero__actions .btn { width: 100%; justify-content: center; }
-  .hero p.lead { font-size: 1.14rem; }
   .lead { font-size: 1.08rem; }
   .price-row { flex-wrap: wrap; }
   .price-row__tag { align-self: flex-start; }
