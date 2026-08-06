@@ -588,6 +588,17 @@ a { color: var(--mint-600); text-decoration: none; }
 .section-head { max-width: 640px; margin: 0 auto 54px; text-align: center; }
 .section-head p { font-size: 1.1rem; }
 
+/* ---------- Centrování tlačítek recenzí ---------- */
+.reviews-buttons, 
+.recenze-tlacitka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+}
+
 /* ---------- About ---------- */
 .about__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; }
 .about__photo {
