@@ -199,14 +199,15 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 /* Obrázek usazený více doprava se šikmým ořezem */
+/* Obrázek rozšířený více směrem k textu */
 .hero__bg {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 52%; /* Fotka začíná dál vpravo */
+  width: 60%; /* Rozšíření obrázku do šířky */
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%); /* Posun šikmého řezu bližší k textu */
   z-index: 1;
 }
 
