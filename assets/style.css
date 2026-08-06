@@ -211,11 +211,13 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 750px; /* Výška sekce nastavena na 700px */
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: #f7f7f5;
-  width: 100%;
+  
+  /* Flexibilní výška ideální pro všechny monitory */
+  min-height: clamp(600px, 75vh, 800px); 
 }
 
 .hero__bg {
@@ -245,7 +247,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero__copy {
   max-width: 440px;
   margin-left: 0;
-  padding: 95px 0; /* Elegantně vycentrovaný text pro výšku 750px */
+  padding: 60px 0;
 }
 
 .hero__copy .eyebrow {
