@@ -211,7 +211,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 600px; /* Výška sekce nastavena na 700px */
+  min-height: 750px; /* Výška sekce nastavena na 700px */
   display: flex;
   align-items: center;
   background-color: #f7f7f5;
@@ -225,7 +225,7 @@ a { color: var(--mint-600); text-decoration: none; }
   bottom: 0;
   width: 67%;
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
 }
 
@@ -245,8 +245,9 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero__copy {
   max-width: 440px;
   margin-left: 0;
-  padding: 80px 0; /* Vyvážené odsazení nahoře i dole pro výšku 700px */
+  padding: 95px 0; /* Elegantně vycentrovaný text pro výšku 750px */
 }
+
 .hero__copy .eyebrow {
   background: #eaece6 !important;
   color: #788270 !important;
