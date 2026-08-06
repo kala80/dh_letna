@@ -211,7 +211,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 1000px; /* Výška sekce nastavena na 1000px */
+  min-height: 800px; /* Výška sekce nastavena na 1000px */
   display: flex;
   align-items: center;
   background-color: #f7f7f5;
