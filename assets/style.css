@@ -663,17 +663,6 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 @media (max-width: 860px) {
-  /* 1. Oprava hlavičky - menší tlačítko na mobilu, aby nepřekrývalo text */
-  .site-header .nav__cta .btn--primary {
-    padding: 8px 14px !important;
-    font-size: 0.8rem !important;
-  }
-  
-  .site-header .nav__cta svg {
-    display: none !important;
-  }
-
-  /* 2. Úprava Hero sekce pro mobil */
   .hero {
     display: flex !important;
     flex-direction: column-reverse !important;
@@ -730,7 +719,6 @@ a { color: var(--mint-600); text-decoration: none; }
     font-size: 0.9rem !important;
   }
 
-  /* 3. Posun spodních karet výhod */
   .hero-features {
     margin-top: 20px !important;
   }
@@ -741,14 +729,27 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 @media (max-width: 720px) {
-  .nav { position: relative; gap: 10px; padding: 12px 0; }
-  .nav__toggle { display: block; z-index: 70; }
+  .nav { position: relative; gap: 8px; padding: 10px 0; }
+  .nav__toggle { display: block; z-index: 70; width: 38px; height: 38px; }
   .nav__cta { gap: 8px; }
   .nav__cta .btn--ghost { display: none; }
+  
+  /* Zkompaktnění tlačítka "Objednat online" v hlavičce na mobilu */
+  .site-header .nav__cta .btn--primary {
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+  }
+  
+  .site-header .nav__cta .btn--primary svg {
+    display: none !important;
+  }
+
   .brand__sub { display: none; }
   .brand__logo { width: 38px; height: 38px; border-radius: 0; }
   .brand__logo svg { width: 36px; height: 36px; }
-  .brand__name { font-size: 1.2rem; }
+  .brand__name { font-size: 1.1rem; }
 
   .nav__links {
     display: flex; position: absolute; top: calc(100% + 10px); left: 0; right: 0;
@@ -814,7 +815,6 @@ a { color: var(--mint-600); text-decoration: none; }
   .wrap { padding: 0 18px; }
   h1 { font-size: 2.05rem; }
   h2 { font-size: 1.55rem; }
-  .brand__name { font-size: 1.05rem; }
   .lead { font-size: 1.08rem; }
   .price-row { flex-wrap: wrap; }
   .price-row__tag { align-self: flex-start; }
