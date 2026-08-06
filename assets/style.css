@@ -315,7 +315,7 @@ a { color: var(--mint-600); text-decoration: none; }
   margin-top: 32px;
 }
 
-/* ---------- HERO FEATURES (Spodní blok výhod) ---------- */
+/* ---------- HERO FEATURES (Vycentrovaný a zalícovaný spodní blok) ---------- */
 .hero-features {
   position: relative;
   z-index: 3;
@@ -332,12 +332,13 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero-features__grid {
   background: #ffffff;
   border-radius: 20px;
-  padding: 24px 36px;
+  padding: 24px 32px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
   border: 1px solid #eef0eb;
+  align-items: center;
 }
 
 .hero-feature {
@@ -345,12 +346,14 @@ a { color: var(--mint-600); text-decoration: none; }
   align-items: center;
   gap: 16px;
   padding-right: 12px;
+  height: 100%;
 }
 
 .hero-feature:not(:last-child) {
   border-right: 1px solid #eef0eb;
 }
 
+/* Perfektně vycentrované číslo/ikona v kruhu */
 .hero-feature__icon {
   width: 48px;
   height: 48px;
@@ -361,18 +364,30 @@ a { color: var(--mint-600); text-decoration: none; }
   justify-content: center;
   flex-shrink: 0;
   color: #4e5b49;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1;
+  text-align: center;
 }
 
 .hero-feature__icon svg {
   width: 22px;
   height: 22px;
+  display: block;
+}
+
+.hero-feature__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-feature__text h3 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #1f2923;
-  margin: 0 0 3px 0;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
 }
 
 .hero-feature__text p {
