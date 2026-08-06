@@ -251,15 +251,15 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero__copy .eyebrow {
-  background: transparent !important; /* Bez šedého podkladu */
-  color: #788270 !important;
+  background: transparent !important;
+  color: #9aa095 !important; /* Tlumená šedozelená z návrhu */
   font-family: 'Nunito', var(--font-body) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   font-size: 0.75rem !important;
   letter-spacing: 0.22em !important;
-  padding: 0 0 8px 0 !important;
+  padding: 0 !important;
+  border: none !important;
   border-radius: 0 !important;
-  border-bottom: 2px solid #8b977c !important; /* Malá zelená lajna pod textem */
   display: inline-block !important;
   margin-bottom: 20px !important;
 }
