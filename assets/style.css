@@ -1,4 +1,4 @@
-/* ============================================================
+ /* ============================================================
    DH Letná — Dentální hygiena Vendula Neuwirthová
    Olivově-šalvějová & béžová paleta · klidná, důvěryhodná
    ============================================================ */
@@ -256,7 +256,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero__copy {
   max-width: 440px;
   margin-left: 0;
-  padding: 25px 0 50px 0; /* Posunuto výše (původně 60px 0) */
+  padding: 25px 0 50px 0;
 }
 
 .hero__copy .eyebrow {
@@ -270,7 +270,7 @@ a { color: var(--mint-600); text-decoration: none; }
   border: none !important;
   border-radius: 0 !important;
   display: inline-block !important;
-  margin-bottom: 14px !important; /* Mírně zmenšena mezera pod štítkem */
+  margin-bottom: 14px !important;
 }
 
 .hero .hero__title {
@@ -652,16 +652,63 @@ a { color: var(--mint-600); text-decoration: none; }
 .hours li { display:flex; justify-content:space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .98rem; }
 .hours li b { font-family: var(--font-head); color: var(--ink); }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (OPRAVA IKONY V PATIČCE) ---------- */
 .site-footer { background: var(--ink); color: #c7d4d9; padding: 60px 0 26px; margin-top: 20px; }
 .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; }
 .site-footer h4 { color:#fff; font-size: 1.05rem; margin-bottom: 16px; }
 .site-footer a { color:#c7d4d9; }
 .site-footer a:hover { color: var(--mint-400); }
 .footer__links { list-style:none; padding:0; margin:0; display:grid; gap: 10px; }
+
 .footer__brand .brand__name { color:#fff; }
-.footer__brand .brand__logo { color:#fff; }
+.footer__brand .brand__logo { 
+  width: 42px; 
+  height: 42px; 
+  color: #fff; 
+  display: grid; 
+  place-items: center; 
+}
+.footer__brand .brand__logo svg { 
+  width: 38px; 
+  height: 38px; 
+  max-width: 38px;
+}
 .footer__brand p { color:#8fa2a9; font-size: .95rem; }
+
+/* Odznáček s hvězdičkou — opraveno přetečení SVG */
+.footer__badge {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 9px; 
+  margin-top: 14px;
+  background: rgba(255,255,255,.06); 
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px; 
+  padding: 8px 15px 8px 12px;
+  font-family: var(--font-head); 
+  font-weight: 500; 
+  font-size: .82rem; 
+  color: #d7e2e6;
+  transition: background .2s, border-color .2s;
+  max-width: fit-content;
+}
+
+.footer__badge:hover { 
+  background: rgba(255,255,255,.12); 
+  border-color: var(--mint-400); 
+  color: #fff; 
+}
+
+.footer__badge svg { 
+  width: 17px !important; 
+  height: 17px !important; 
+  max-width: 17px !important;
+  max-height: 17px !important;
+  color: #ffce4a; 
+  flex: none; 
+}
+
+.footer__badge b { color: var(--mint-400); font-weight: 600; }
 
 .footer__bottom {
   margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1);
