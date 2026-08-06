@@ -211,7 +211,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 700px; /* Zvětšeno z 620px na 700px */
+  min-height: 1000px; /* Výška sekce nastavena na 1000px */
   display: flex;
   align-items: center;
   background-color: #f7f7f5;
@@ -223,9 +223,10 @@ a { color: var(--mint-600); text-decoration: none; }
   top: 0;
   right: 0;
   bottom: 0;
-  width: 67%;
+  width: 65%;
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  /* Úhel šikmého ořezu doladěný pro vysokou sekci */
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
 }
 
@@ -243,9 +244,9 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero__copy {
-  max-width: 440px;
+  max-width: 460px;
   margin-left: 0;
-  padding: 80px 0; /* Zvětšeno horní a spodní odsazení z 40px na 80px */
+  padding: 140px 0; /* Větší odsazení zaručí vzdušné vycentrování textu */
 }
 
 .hero__copy .eyebrow {
