@@ -187,25 +187,26 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 .nav__toggle span { display: block; width: 22px; height: 2.4px; background: var(--ink); margin: 4px auto; border-radius: 2px; transition: .3s; }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (Roztažení na plnou šířku + doladění písma) ---------- */
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 580px;
+  min-height: 600px;
   display: flex;
   align-items: center;
-  background-color: #f5f6f4;
+  background-color: #f7f7f5; /* Světlé krémové pozadí */
+  width: 100%;
 }
 
-/* Ořez obrázku posunutý více doprava */
+/* Obrázek usazený více doprava se šikmým ořezem */
 .hero__bg {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 55%; /* Zmenšeno, aby fotka nezasahovala do textu */
+  width: 52%; /* Fotka začíná dál vpravo */
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%); /* Posunutý bod ořezu */
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
 }
 
@@ -214,73 +215,77 @@ a { color: var(--mint-600); text-decoration: none; }
   display: none !important;
 }
 
+/* Kontajner roztažený na šířku okna s odsazením zleva (stejně jako logo v hlavičce) */
 .hero .wrap {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: none !important;
+  padding: 0 clamp(20px, 5vw, 80px) !important;
 }
 
-/* Textový blok usazený plně do světlé levé části */
+/* Textový blok zarovnaný plně do leva */
 .hero__copy {
-  max-width: 480px; /* Zajišťuje, že se text zalomí ještě před fotkou */
-  margin-left: 0;   /* Zarovnání zcela do leva */
-  padding: 40px 0;
+  max-width: 480px;
+  margin-left: 0;
+  padding: 50px 0;
 }
 
-.hero .hero__title {
-  color: #1f2923 !important;
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  line-height: 1.15;
-  font-weight: 400;
-  margin-top: 0.3em;
-  margin-bottom: 20px;
-}
-
-.hero p.lead {
-  color: #525b56 !important;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 420px;
-}
-
+/* Štítek s větším odsazením písmen */
 .hero__copy .eyebrow {
-  background: #e5e9df !important;
-  color: #6a785c !important;
+  background: #eaece6 !important;
+  color: #788270 !important;
+  font-family: 'Nunito', var(--font-body) !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.18em !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
 }
 
-.hero__actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 28px;
+/* Titulek: Jemnější font, tenčí tloušťka a šedozelená barva z návrhu */
+.hero .hero__title {
+  color: #2b332c !important;
+  font-family: 'Nunito', var(--font-body) !important;
+  font-weight: 300 !important; /* Tenčí řez písma */
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem) !important;
+  line-height: 1.12 !important;
+  margin-top: 0.4em !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.01em !important;
 }
+
+/* Odstavec: Zjemněný text */
+.hero p.lead {
+  color: #5c635a !important;
+  font-family: 'Nunito', var(--font-body) !important;
+  font-weight: 400 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+  max-width: 430px !important;
+}
+
 /* Tlačítka */
 .hero__actions {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
-.btn--ghost {
-  background: #ffffff;
-  color: #1f2923;
-  border: 1px solid #c8d1cc;
+/* Responsivita pro menší displeje */
+@media (max-width: 992px) {
+  .hero__bg {
+    width: 60%;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }
 
-.btn--ghost:hover {
-  background: #f4f6f5;
-}
-
-/* Responsivita pro mobily a tablety */
 @media (max-width: 860px) {
   .hero {
     flex-direction: column;
     min-height: auto;
-    background-color: #ffffff;
+    background-color: #f7f7f5;
   }
   .hero__bg {
     position: relative;
@@ -290,7 +295,7 @@ a { color: var(--mint-600); text-decoration: none; }
   }
   .hero__copy {
     max-width: 100%;
-    padding: 24px 0;
+    padding: 30px 0;
   }
 }
 
