@@ -251,25 +251,34 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero__copy .eyebrow {
-  background: #eaece6 !important;
+  background: transparent !important; /* Bez šedého podkladu */
   color: #788270 !important;
   font-family: 'Nunito', var(--font-body) !important;
   font-weight: 700 !important;
-  font-size: 0.72rem !important;
-  letter-spacing: 0.18em !important;
-  border-radius: 6px !important;
-  padding: 6px 14px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.22em !important;
+  padding: 0 0 8px 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid #8b977c !important; /* Malá zelená lajna pod textem */
+  display: inline-block !important;
+  margin-bottom: 20px !important;
 }
 
 .hero .hero__title {
-  color: #2b332c !important;
+  color: #2b332c !important; /* Základní tmavá barva pro "Dentální hygiena" */
   font-family: 'Nunito', var(--font-body) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   font-size: clamp(2.4rem, 4.2vw, 3.6rem) !important;
-  line-height: 1.12 !important;
-  margin-top: 0.4em !important;
+  line-height: 1.15 !important;
+  margin-top: 0.2em !important;
   margin-bottom: 24px !important;
   letter-spacing: -0.01em !important;
+}
+
+.hero .hero__title span {
+  color: #4e5b49 !important; /* Olivově zelená barva z grafického návrhu */
+  font-weight: 600 !important; /* Mírně výraznější řez */
+  display: block;
 }
 
 .hero p.lead {
