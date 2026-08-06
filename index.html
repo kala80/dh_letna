@@ -67,6 +67,44 @@
 </head>
 <body>
 
+  <!-- Cookie lišta -->
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+  <div class="cookie-banner__content">
+    <div class="cookie-banner__text">
+      <h4>Tento web používá cookies 🍪</h4>
+      <p>Používáme nezbytné cookies pro správný chod webu a analytické cookies pro zlepšování našich služeb.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept-necessary" class="btn btn--ghost btn--sm">Pouze nezbytné</button>
+      <button id="cookie-accept-all" class="btn btn--primary btn--sm">Povolit vše</button>
+    </div>
+  </div>
+</div>
+
+<!-- Skript pro funkčnost lišty -->
+<script>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    var btnAll = document.getElementById('cookie-accept-all');
+    var btnNecessary = document.getElementById('cookie-accept-necessary');
+
+    // Pokud uživatel ještě neučinil volbu, zobrazíme lištu
+    if (!localStorage.getItem('dh_cookie_consent')) {
+      banner.style.display = 'block';
+    }
+
+    btnAll.addEventListener('click', function() {
+      localStorage.setItem('dh_cookie_consent', 'all');
+      banner.style.display = 'none';
+    });
+
+    btnNecessary.addEventListener('click', function() {
+      localStorage.setItem('dh_cookie_consent', 'necessary');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+
 <!-- ============ HEADER ============ -->
 <div class="topbar">
   <div class="wrap">
