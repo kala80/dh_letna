@@ -10,10 +10,10 @@
 <meta name="author" content="Vendula Neuwirthová">
 <meta name="theme-color" content="#4e5b49">
 
-<!-- Okamžitý přednostní pre-load pro hlavní obrázek (zrychlení LCP) -->
+<!-- Agresivní pre-load a fetchpriority pro LCP -->
 <link rel="preload" as="image" href="assets/img/ordinace-wide.jpg" fetchpriority="high">
 
-<!-- Optimalizované načítání písem bez blokování vykreslení -->
+<!-- Asynchronní načtení fontů (zajišťuje nulové blokování vykreslení) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
