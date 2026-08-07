@@ -1,5 +1,5 @@
 /* ============================================================
-   DH Letná — Původní styly s opravou velikosti ikon a rychlosti
+   DH Letná — Finální opravené styly (Vzhled + Výkon)
    ============================================================ */
 
 :root {
@@ -96,7 +96,14 @@ a { color: var(--mint-600); text-decoration: none; }
 /* Topbar & Header */
 .topbar { background: var(--mint-600); }
 .topbar .wrap { display: flex; justify-content: center; align-items: center; min-height: 36px; padding: 6px 24px; }
-.topbar__badge { color: #fff; font-size: .85rem; }
+.topbar__badge { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: .85rem; }
+.topbar__badge svg { width: 17px !important; height: 17px !important; max-width: 17px; color: #ffdf6b; flex: none; }
+.topbar__badge b { font-weight: 600; }
+.topbar__short { display: none; }
+@media (max-width: 560px) {
+  .topbar__long { display: none; }
+  .topbar__short { display: inline; }
+}
 
 .site-header {
   position: sticky;
@@ -109,7 +116,8 @@ a { color: var(--mint-600); text-decoration: none; }
 .site-header .wrap { max-width: none; padding: 0 30px; }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand__logo { font-size: 1.8rem; line-height: 1; }
+.brand__logo { width: 42px; height: 42px; display: grid; place-items: center; color: var(--ink); flex: none; }
+.brand__logo svg { width: 38px !important; height: 38px !important; max-width: 38px; display: block; }
 .brand__name { font-weight: 600; font-size: 1.2rem; line-height: 1.1; color: var(--ink); }
 .brand__sub { font-size: .75rem; color: var(--muted); }
 
@@ -118,7 +126,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .nav__links a.is-active { font-weight: 600; color: var(--ink); }
 .nav__cta { display: flex; align-items: center; gap: 10px; }
 
-/* Hero sekce (Původní správný vzhled) */
+/* Hero sekce */
 .hero {
   position: relative;
   overflow: hidden;
@@ -152,6 +160,16 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero p.lead { font-size: 0.98rem; color: #5c635a; }
 .hero__actions { display: flex; gap: 16px; margin-top: 28px; }
 
+/* Hero Features (Oprava velikosti ikon) */
+.hero-features { position: relative; z-index: 3; margin-top: -45px; padding-bottom: 30px; }
+.hero-features .wrap { max-width: 1360px !important; margin: 0 auto; padding: 0 24px; }
+.hero-features__grid { background: #fff; border-radius: var(--radius-lg); padding: 24px 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--line); align-items: center; }
+.hero-feature { display: flex; align-items: center; gap: 16px; }
+.hero-feature__icon { width: 44px; height: 44px; border-radius: 50%; background-color: #f2f4ef; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #4e5b49; }
+.hero-feature__icon svg { width: 22px !important; height: 22px !important; max-width: 22px; display: block; }
+.hero-feature__text h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 2px 0; }
+.hero-feature__text p { font-size: 0.83rem; color: #69736e; margin: 0; }
+
 /* Gridy a karty */
 .grid { display: grid; gap: 24px; }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
@@ -162,22 +180,13 @@ a { color: var(--mint-600); text-decoration: none; }
 .site-footer { background: var(--ink); color: #c7d4d9; padding: 40px 0 20px; }
 .footer__bottom { display: flex; justify-content: space-between; font-size: .85rem; color: #8fa2a9; }
 
-/* Mobilní optimalizace pro rychlost (bez rozbití designu) */
+/* Mobilní optimalizace */
 @media (max-width: 860px) {
-  .hero {
-    flex-direction: column-reverse;
-    min-height: auto;
-    padding-top: 20px;
-  }
-  .hero__bg {
-    position: relative;
-    width: 100%;
-    height: 240px;
-    clip-path: none;
-    border-radius: var(--radius-lg);
-  }
+  .hero { flex-direction: column-reverse; min-height: auto; padding-top: 20px; }
+  .hero__bg { position: relative; width: 100%; height: 240px; clip-path: none; border-radius: var(--radius-lg); }
   .hero .wrap { padding: 0 20px !important; }
   .hero__copy { max-width: 100%; padding: 20px 0 0 0; }
+  .hero-features__grid { grid-template-columns: 1fr; }
   .grid--3 { grid-template-columns: 1fr; }
 }
 
