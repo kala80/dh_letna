@@ -914,6 +914,8 @@ a { color: var(--mint-600); text-decoration: none; }
     clip-path: none !important;
     border-radius: var(--radius-lg) !important;
     margin-top: 20px !important;
+    background: #f7f7f5 !important;
+    background-image: none !important; /* Odstraní těžký obrázek na mobilu pro max. výkon LCP */
   }
 
   .hero .wrap { padding: 0 20px !important; }
