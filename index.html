@@ -88,7 +88,6 @@
     var btnAll = document.getElementById('cookie-accept-all');
     var btnNecessary = document.getElementById('cookie-accept-necessary');
 
-    // Pokud uživatel ještě neučinil volbu, zobrazíme lištu
     if (!localStorage.getItem('dh_cookie_consent')) {
       banner.style.display = 'block';
     }
@@ -201,7 +200,7 @@
 
       <div class="hero-feature">
         <div class="hero-feature__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.8z"/></svg>
         </div>
         <div class="hero-feature__text">
           <h3>Příjemné prostředí</h3>
@@ -212,44 +211,44 @@
   </div>
 </section>
 
-<!-- ============ SLUŽBY ============ -->
+<!-- ============ SLUŽBY (PROBLÉM ➔ ŘEŠENÍ) ============ -->
 <section class="section" id="sluzby">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Nabízené služby</span>
-      <h2>V rámci dentální hygieny nabízím</h2>
-      <p>Kompletní péči na míru — od prevence a pravidelné hygieny až po řešení konkrétních obtíží.</p>
+      <span class="eyebrow">Pečuji o každého pacienta</span>
+      <h2>S čím vám pomůžu</h2>
+      <p>Seznamte se s mými zákroky, které řeší konkrétní potřeby pro zdravý a zářivý úsměv.</p>
     </div>
     <div class="grid grid--3">
       <div class="card reveal">
         <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-2-1.5-5-1-6 1s0 5 .6 7c.4 1.4.5 3 1.4 3s1-1.3 1.2-2.4c.2-1 .4-1.9 1.4-1.9s1.2.9 1.4 1.9C13.6 15.7 13.9 17 14.8 17s1-1.6 1.4-3c.6-2 1.6-5 .6-7s-4-2.5-6-1Z"/></svg></span>
-        <h3>Dentální hygiena pro dospělé i děti</h3>
-        <p>Kompletní profesionální hygiena po indikaci zubním lékařem. Šetrně, důkladně a s ohledem na malé i velké pacienty.</p>
+        <h3>Trápí vás zubní kámen a krvácení dásní?</h3>
+        <p>Základní dentální hygiena pro zdravá ústa.</p>
       </div>
       <div class="card reveal">
         <span class="card__icon card__icon--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
-        <h3>Péče o parodont</h3>
-        <p>Pečuji o parodontologické pacienty ve spolupráci se zubním lékařem i parodontologem.</p>
+        <h3>Potřebujete odstranit pigmentace od kávy či čaje?</h3>
+        <p>Profesionální čištění Airflow (pískování).</p>
       </div>
       <div class="card reveal">
         <span class="card__icon card__icon--sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="4"/></svg></span>
-        <h3>Citlivost zubů</h3>
-        <p>Pokud vás trápí citlivé zuby, navrhnu vhodné možnosti řešení a doporučím vhodnou domácí péči.</p>
+        <h3>Máte citlivé zuby při jídle a pití?</h3>
+        <p>Jemné a šetrné ošetření speciálními gely.</p>
       </div>
       <div class="card reveal">
         <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4L7.5 20l.9-5L4.8 8.2l5-.7L12 3Z"/></svg></span>
-        <h3>Bělení zubů</h3>
-        <p>Nejste spokojeni s barvou svých zubů? Nabízím konzultaci a šetrné bělení metodou <strong>Pure Whitening</strong>.</p>
+        <h3>Chcete se zbavit parodontózy a zápachu z úst?</h3>
+        <p>Cílená parodontologická péče.</p>
       </div>
       <div class="card reveal">
         <span class="card__icon card__icon--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M9 17a3 3 0 0 0 6 0"/></svg></span>
-        <h3>Odstranění pigmentací</h3>
-        <p>Zabarvení zubů od kávy, čaje, vína či kouření šetrně odstraním pomocí moderního přístroje Air Flow.</p>
+        <h3>Toužíte po zářivějším a bělejším úsměvu?</h3>
+        <p>Bezpečné a šetrné bělení zubů.</p>
       </div>
       <div class="card reveal">
         <span class="card__icon card__icon--sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-        <h3>Poradenství pro domácí péči</h3>
-        <p>Vyberu pro vás vhodnou metodu čištění a doporučím pomůcky pro účinnou každodenní péči o zuby a dásně.</p>
+        <h3>Chcete ochránit zuby svých dětí před kazem?</h3>
+        <p>Preventivní péče a instruktáž pro nejmenší.</p>
       </div>
     </div>
   </div>
