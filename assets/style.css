@@ -47,6 +47,11 @@
   font-family: var(--font-body) !important;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -57,7 +62,6 @@ body {
   line-height: 1.7;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -399,66 +403,66 @@ a { color: var(--mint-600); text-decoration: none; }
   line-height: 1.35;
 }
 
-/* ---------- Služby (Nové sexy karty s bento zvýrazněním) ---------- */
+/* ---------- Služby (Bento Grid) ---------- */
 .grid { display: grid; gap: 26px; }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { 
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
 
 .card {
+  grid-column: span 4;
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 34px 30px;
+  padding: 38px 32px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--line);
-  transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s cubic-bezier(0.16, 1, 0.3, 1), border-color .3s ease;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover { 
-  transform: translateY(-6px); 
-  box-shadow: var(--shadow-md); 
-  border-color: var(--mint-200);
+  transform: translateY(-5px); 
+  box-shadow: 0 18px 40px rgba(60, 71, 56, 0.09); 
+  border-color: var(--mint-300);
 }
 
-/* Hlavní zvýrazněná (Bento) karta */
-.card--featured {
+/* První dvě karty jako Bento dominanty */
+.grid--3 .card:nth-child(1),
+.grid--3 .card:nth-child(2) {
+  grid-column: span 6;
   background: linear-gradient(135deg, #f7f9f4 0%, #edf2ea 100%);
   border-color: var(--mint-200);
-  box-shadow: 0 8px 30px rgba(78, 91, 73, 0.08);
 }
 
-.card__tag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #fff;
-  background: var(--mint-600);
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 14px;
-  width: fit-content;
+.grid--3 .card:nth-child(3),
+.grid--3 .card:nth-child(4),
+.grid--3 .card:nth-child(5),
+.grid--3 .card:nth-child(6) {
+  grid-column: span 4;
 }
 
 .card__icon {
-  width: 48px; 
-  height: 48px; 
-  border-radius: 12px; 
-  display: grid; 
-  place-items: center;
-  margin-bottom: 20px; 
-  background: #f2f5ee; 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 14px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px; 
+  background: #ffffff; 
   color: var(--mint-600);
-  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-.card--featured .card__icon {
-  background: #ffffff;
-  color: var(--mint-700);
-  box-shadow: 0 4px 12px rgba(78, 91, 73, 0.06);
+.grid--3 .card:nth-child(1) .card__icon,
+.grid--3 .card:nth-child(2) .card__icon {
+  background: var(--mint-600);
+  color: #ffffff;
 }
 
 .card:hover .card__icon {
@@ -469,18 +473,18 @@ a { color: var(--mint-600); text-decoration: none; }
 .card__icon svg { width: 24px; height: 24px; }
 
 .card h3 {
-  font-size: 1.22rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 10px;
-  line-height: 1.35;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--ink-soft);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .section-head { max-width: 640px; margin: 0 auto 54px; text-align: center; }
@@ -879,12 +883,36 @@ a { color: var(--mint-600); text-decoration: none; }
   .nav__links li { list-style: none; margin: 0; }
   .nav__links a { display: block; padding: 12px 16px; border-radius: var(--radius-btn); font-weight: 500; font-size: 1rem; color: var(--ink); }
 
+  /* Oprava bento gridu pro mobily - vše pod sebou v plné šířce */
+  #sluzby .grid--3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  #sluzby .card,
+  #sluzby .card:nth-child(1),
+  #sluzby .card:nth-child(2),
+  #sluzby .card:nth-child(3),
+  #sluzby .card:nth-child(4),
+  #sluzby .card:nth-child(5),
+  #sluzby .card:nth-child(6) {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero {
+    width: 100% !important;
+    overflow: hidden;
+  }
+
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 165px; }
   .gallery-grid .g-big { grid-column: span 2; grid-row: span 1; }
   .gallery-grid .g-wide { grid-column: span 2; }
 
   .section { padding: 58px 0; }
-  .grid--3, .grid--2 { grid-template-columns: 1fr; }
+  .grid--2 { grid-template-columns: 1fr; }
   .promo, .contact__card, .cta-strip { padding: 30px 22px; }
   body { font-size: 17px; }
 }
@@ -944,98 +972,3 @@ a { color: var(--mint-600); text-decoration: none; }
 .review-card__text { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.55; margin: 0 0 20px 0; font-style: italic; }
 .review-card__author b { display: block; font-family: var(--font-head); font-size: 0.9rem; color: var(--ink); }
 .review-card__author span { font-size: 0.78rem; color: var(--muted); }
-
-
-/* --- ÚPRAVA SEKCE SLUŽEB (BENTO GRID) --- */
-#sluzby .grid--3 {
-  grid-template-columns: repeat(12, 1fr) !important;
-  gap: 24px;
-}
-
-/* Všechny karty dostanou víc prostoru a vzduchu */
-#sluzby .card {
-  grid-column: span 4;
-  padding: 38px 32px;
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 30px rgba(60, 71, 56, 0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-#sluzby .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(60, 71, 56, 0.09);
-  border-color: var(--mint-300);
-}
-
-/* První dvě karty (Zubní kámen a Airflow) budou větší (zaberou 6 sloupců z 12) */
-#sluzby .card:nth-child(1),
-#sluzby .card:nth-child(2) {
-  grid-column: span 6;
-  background: linear-gradient(135deg, #f7f9f4 0%, #edf2ea 100%);
-  border-color: var(--mint-200);
-}
-
-/* Zbylé 4 karty budou ve spodní řadě po třech (zaberou 4 sloupce) */
-#sluzby .card:nth-child(3),
-#sluzby .card:nth-child(4),
-#sluzby .card:nth-child(5),
-#sluzby .card:nth-child(6) {
-  grid-column: span 4;
-}
-
-/* Vylepšení typografie uvnitř karet služeb */
-#sluzby .card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-#sluzby .card p {
-  font-size: 1rem;
-  color: var(--ink-soft);
-  margin: 0;
-  line-height: 1.55;
-}
-
-#sluzby .card__icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: #ffffff;
-  color: var(--mint-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-}
-
-#sluzby .card:nth-child(1) .card__icon,
-#sluzby .card:nth-child(2) .card__icon {
-  background: var(--mint-600);
-  color: #ffffff;
-}
-
-@media (max-width: 940px) {
-  #sluzby .grid--3 {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  #sluzby .card,
-  #sluzby .card:nth-child(1),
-  #sluzby .card:nth-child(2),
-  #sluzby .card:nth-child(3),
-  #sluzby .card:nth-child(4),
-  #sluzby .card:nth-child(5),
-  #sluzby .card:nth-child(6) {
-    grid-column: auto !important;
-    width: 100% !important;
-  }
-}
