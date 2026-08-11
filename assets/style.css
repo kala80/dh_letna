@@ -268,15 +268,15 @@ a { color: var(--mint-600); text-decoration: none; }
   align-items: center;
   overflow: hidden;
   background-color: #a9a096;
-  min-height: clamp(560px, 44.5vw, 780px);
-  padding: 76px 0 84px;
+  min-height: clamp(620px, 51.5vw, 1000px);
+  padding: 84px 0 104px;
 }
 
 /* fotka přes celou šířku hero sekce */
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("img/hero-bg.jpg") no-repeat 62% center / cover;
+  background: url("img/hero-bg.jpg") no-repeat center top / cover;
   z-index: 0;
 }
 /* jemné ztmavení vlevo kvůli čitelnosti bílého textu */
@@ -386,23 +386,23 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero-features {
   position: relative;
   z-index: 3;
-  margin-top: -45px;
+  margin-top: -58px;
   padding-bottom: 30px;
 }
 
 .hero-features .wrap {
-  max-width: none !important;
+  max-width: 1560px !important;
   margin: 0 auto;
-  padding: 0 clamp(16px, 8.6vw, 170px) !important;
+  padding: 0 clamp(16px, 3vw, 48px) !important;
 }
 
 .hero-features__grid {
   background: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 26px 34px;
+  padding: 30px 22px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 0;
   box-shadow: 0 18px 44px rgba(20, 26, 40, 0.10);
   border: 1px solid #eef0f3;
   align-items: center;
@@ -412,7 +412,7 @@ a { color: var(--mint-600); text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 16px;
-  padding-right: 12px;
+  padding: 2px 22px;
   height: 100%;
 }
 
@@ -421,8 +421,8 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero-feature__icon {
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background-color: var(--blue-50);
   display: flex;
@@ -436,24 +436,24 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero-feature__icon svg {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   display: block;
 }
 
 .hero-feature__text h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.0rem;
+  font-weight: 700;
   color: #1f2430;
-  margin: 0 0 2px 0;
+  margin: 0 0 4px 0;
   line-height: 1.25;
 }
 
 .hero-feature__text p {
-  font-size: 0.83rem;
+  font-size: 0.88rem;
   color: #6b7280;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 /* ---------- Checklist ---------- */
