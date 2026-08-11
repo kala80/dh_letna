@@ -261,9 +261,9 @@ a { color: var(--mint-600); text-decoration: none; }
   top: 0;
   right: 0;
   bottom: 0;
-  width: 67%;
+  width: 55%;
   background: url("img/hero-bg.jpg") no-repeat center right / cover;
-  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
 }
 
