@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "name": "Vstupní dentální hygiena",
+      "note": "",
+      "price": "2 080",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Dentální hygiena dospělí",
+      "note": "včetně Air Flow",
+      "price": "1 980",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Dentální hygiena děti do 12 let",
+      "note": "bez Air Flow",
+      "price": "1 350",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Dentální hygiena děti do 12 let",
+      "note": "včetně Air Flow",
+      "price": "1 550",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Deep scaling",
+      "note": "1 návštěva",
+      "price": "2 500",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Fluoridace krčku",
+      "note": "",
+      "price": "250",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Air Flow – pískování obou čelistí",
+      "note": "bez dentální hygieny, včetně fluoridace a leštění",
+      "price": "1 200",
+      "feature": false,
+      "promo": false
+    },
+    {
+      "name": "Bělení Pure Whitening",
+      "note": "včetně otisků · viditelné a dlouhodobé výsledky",
+      "price": "9 900",
+      "feature": true,
+      "promo": true
+    }
+  ],
+  "updated": ""
+}
