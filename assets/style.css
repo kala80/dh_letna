@@ -386,20 +386,20 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero-features {
   position: relative;
   z-index: 3;
-  margin-top: -58px;
+  margin-top: clamp(-72px, -4vw, -58px);
   padding-bottom: 30px;
 }
 
 .hero-features .wrap {
-  max-width: 1560px !important;
+  max-width: 1860px !important;
   margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 48px) !important;
+  padding: 0 clamp(16px, 3vw, 56px) !important;
 }
 
 .hero-features__grid {
   background: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 30px 22px;
+  padding: clamp(28px, 2.3vw, 50px) clamp(18px, 1.4vw, 32px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
@@ -411,8 +411,8 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero-feature {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 2px 22px;
+  gap: clamp(14px, 1.1vw, 22px);
+  padding: 2px clamp(18px, 1.5vw, 34px);
   height: 100%;
 }
 
@@ -421,8 +421,8 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero-feature__icon {
-  width: 54px;
-  height: 54px;
+  width: clamp(54px, 3.6vw, 74px);
+  height: clamp(54px, 3.6vw, 74px);
   border-radius: 50%;
   background-color: var(--blue-50);
   display: flex;
@@ -436,24 +436,24 @@ a { color: var(--mint-600); text-decoration: none; }
 }
 
 .hero-feature__icon svg {
-  width: 25px;
-  height: 25px;
+  width: clamp(25px, 1.7vw, 35px);
+  height: clamp(25px, 1.7vw, 35px);
   display: block;
 }
 
 .hero-feature__text h3 {
-  font-size: 1.0rem;
+  font-size: clamp(1rem, 0.9vw, 1.26rem);
   font-weight: 700;
   color: #1f2430;
-  margin: 0 0 4px 0;
+  margin: 0 0 5px 0;
   line-height: 1.25;
 }
 
 .hero-feature__text p {
-  font-size: 0.88rem;
+  font-size: clamp(0.88rem, 0.75vw, 1.06rem);
   color: #6b7280;
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* ---------- Checklist ---------- */
