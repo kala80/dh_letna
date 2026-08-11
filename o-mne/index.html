@@ -25,7 +25,8 @@
 <meta name="twitter:image" content="https://dh-letna.cz/assets/img/vchod.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -92,13 +93,19 @@
   </div>
 </header>
 
+<main id="obsah">
+
+
 <!-- ============ ABOUT ============ -->
 <section class="section section--tint">
   <div class="wrap">
     <div class="about__grid">
       <figure class="medailon reveal">
         <div class="medailon__img">
-          <img src="../assets/img/portret-medailon.jpg" alt="Vendula Neuwirthová, dentální hygienistka" width="760" height="950">
+          <picture>
+            <source srcset="../assets/img/portret-medailon.webp" type="image/webp">
+            <img src="../assets/img/portret-medailon.jpg" alt="Vendula Neuwirthová, dentální hygienistka" width="760" height="950" fetchpriority="high" decoding="async">
+          </picture>
         </div>
         <figcaption class="medailon__meta">
           <div class="medailon__name">
@@ -129,6 +136,8 @@
   </div>
 </section>
 
+
+</main>
 
 <footer class="site-footer">
   <div class="wrap">

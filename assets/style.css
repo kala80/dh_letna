@@ -268,7 +268,7 @@ a { color: var(--mint-600); text-decoration: none; }
   align-items: center;
   overflow: hidden;
   background-color: #a9a096;
-  min-height: clamp(620px, 51.5vw, 1000px);
+  min-height: clamp(560px, 43vw, 1080px);
   padding: 84px 0 104px;
 }
 
@@ -276,7 +276,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("img/hero-bg.jpg") no-repeat center top / cover;
+  background: url("img/hero-bg.jpg") no-repeat center center / cover;
   z-index: 0;
 }
 /* jemné ztmavení vlevo kvůli čitelnosti bílého textu */
@@ -441,7 +441,8 @@ a { color: var(--mint-600); text-decoration: none; }
   display: block;
 }
 
-.hero-feature__text h3 {
+.hero-feature__text h3,
+.hero-feature__title {
   font-size: clamp(1rem, 0.9vw, 1.26rem);
   font-weight: 700;
   color: #1f2430;

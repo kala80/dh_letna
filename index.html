@@ -28,8 +28,10 @@
 <meta name="twitter:image" content="https://dh-letna.cz/assets/img/ordinace-wide.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap"></noscript>
+<link rel="preload" as="image" href="assets/img/hero-bg-mobile.jpg" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-bg.jpg" media="(min-width: 861px)" fetchpriority="high">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -142,6 +144,9 @@
   </div>
 </header>
 
+<main id="obsah">
+
+
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero__bg" role="img" aria-label="Vendula Neuwirthová – dentální hygienistka, ordinace na Letné"></div>
@@ -173,7 +178,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.12 2 7 0 6-5.5 11-10 11z"/></svg>
         </div>
         <div class="hero-feature__text">
-          <h3>Šetrné ošetření</h3>
+          <p class="hero-feature__title">Šetrné ošetření</p>
           <p>Bez bolesti, s důrazem na vaše pohodlí.</p>
         </div>
       </div>
@@ -183,7 +188,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <div class="hero-feature__text">
-          <h3>Moderní technologie</h3>
+          <p class="hero-feature__title">Moderní technologie</p>
           <p>Pracujeme s ověřenými a špičkovými technologiemi.</p>
         </div>
       </div>
@@ -193,7 +198,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="hero-feature__text">
-          <h3>Individuální přístup</h3>
+          <p class="hero-feature__title">Individuální přístup</p>
           <p>Každý klient je pro nás jedinečný.</p>
         </div>
       </div>
@@ -203,7 +208,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.8z"/></svg>
         </div>
         <div class="hero-feature__text">
-          <h3>Příjemné prostředí</h3>
+          <p class="hero-feature__title">Příjemné prostředí</p>
           <p>Klidná atmosféra, ve které se budete cítit dobře.</p>
         </div>
       </div>
@@ -389,16 +394,28 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="photo g-big" data-label="Záběr ordinace">
-        <img src="assets/img/ordinace-1.jpg" alt="Moderní ordinace dentální hygieny na Letné">
+        <picture>
+          <source srcset="assets/img/ordinace-1.webp" type="image/webp">
+          <img src="assets/img/ordinace-1.jpg" alt="Moderní ordinace dentální hygieny na Letné" width="940" height="1253" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="photo" data-label="Záběr ordinace">
-        <img src="assets/img/ordinace-2.jpg" alt="Ošetřovna dentální hygieny Letná">
+        <picture>
+          <source srcset="assets/img/ordinace-2.webp" type="image/webp">
+          <img src="assets/img/ordinace-2.jpg" alt="Ošetřovna dentální hygieny Letná" width="700" height="933" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="photo" data-label="Záběr ordinace">
-        <img src="assets/img/ordinace-3.jpg" alt="Vybavení a produkty v ordinaci">
+        <picture>
+          <source srcset="assets/img/ordinace-3.webp" type="image/webp">
+          <img src="assets/img/ordinace-3.jpg" alt="Vybavení a produkty v ordinaci" width="700" height="933" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="photo g-wide" data-label="Panorama ordinace">
-        <img src="assets/img/ordinace-wide.jpg" alt="Celkový pohled do ordinace dentální hygieny">
+        <picture>
+          <source srcset="assets/img/ordinace-wide.webp" type="image/webp">
+          <img src="assets/img/ordinace-wide.jpg" alt="Celkový pohled do ordinace dentální hygieny" width="1340" height="893" loading="lazy" decoding="async">
+        </picture>
       </div>
     </div>
   </div>
@@ -441,6 +458,8 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
+</main>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer__grid">
