@@ -120,9 +120,10 @@ if (isset($_GET['odhlasit'])) {
 
 $login_error = '';
 if (isset($_POST['heslo']) && !isset($_SESSION['auth'])) {
+    $jmeno_ok = hash_equals(ADMIN_USER, trim((string) ($_POST['jmeno'] ?? '')));
     if (!empty($_SESSION['blok']) && $_SESSION['blok'] > time()) {
         $login_error = 'Příliš mnoho pokusů. Zkuste to prosím za chvíli.';
-    } elseif (password_verify((string) $_POST['heslo'], ADMIN_HASH)) {
+    } elseif ($jmeno_ok && password_verify((string) $_POST['heslo'], ADMIN_HASH)) {
         session_regenerate_id(true);
         $_SESSION['auth'] = true;
         $_SESSION['csrf'] = bin2hex(random_bytes(16));
@@ -135,7 +136,7 @@ if (isset($_POST['heslo']) && !isset($_SESSION['auth'])) {
             $_SESSION['pokusy']  = 0;
         }
         sleep(1);
-        $login_error = 'Nesprávné heslo.';
+        $login_error = 'Nesprávné jméno nebo heslo.';
     }
 }
 
@@ -299,6 +300,7 @@ $updated = $d['updated'] ?? '';
   .bar { display:flex; gap:12px; align-items:center; margin-top:20px; flex-wrap:wrap; }
   label.chk { display:flex; align-items:center; gap:7px; font-size:.85rem; color:var(--muted); white-space:nowrap; cursor:pointer; }
   .login { max-width:380px; margin:12vh auto; }
+  .login input[type=text],
   .login input[type=password] { width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; font-size:1rem; margin-bottom:14px; }
   details { margin-top:6px; }
   summary { cursor:pointer; color:var(--muted); font-size:.9rem; }
@@ -317,10 +319,11 @@ $updated = $d['updated'] ?? '';
   <main>
     <div class="card login">
       <h1>Správa ceníku</h1>
-      <p class="hint">Zadejte prosím heslo.</p>
+      <p class="hint">Zadejte prosím přihlašovací údaje.</p>
       <?php if ($login_error): ?><div class="msg msg--err"><?= h($login_error) ?></div><?php endif; ?>
       <form method="post">
-        <input type="password" name="heslo" placeholder="Heslo" autofocus required>
+        <input type="text" name="jmeno" placeholder="Přihlašovací jméno" autocomplete="username" autofocus required>
+        <input type="password" name="heslo" placeholder="Heslo" autocomplete="current-password" required>
         <button class="btn" type="submit" style="width:100%; justify-content:center;">Přihlásit se</button>
       </form>
     </div>
@@ -330,7 +333,8 @@ $updated = $d['updated'] ?? '';
   <header>
     <div>
       <b>Správa ceníku – DH Letná</b><br>
-      <span><?php if ($updated) { echo 'Naposledy upraveno: ' . h(date('j. n. Y H:i', strtotime($updated))); } ?></span>
+      <span>Přihlášena: <?= h(ADMIN_USER) ?></span>
+      <span><?php if ($updated) { echo ' · Naposledy upraveno: ' . h(date('j. n. Y H:i', strtotime($updated))); } ?></span>
     </div>
     <div style="display:flex; gap:10px;">
       <a class="btn btn--ghost" href="../cenik/" target="_blank">Zobrazit ceník</a>

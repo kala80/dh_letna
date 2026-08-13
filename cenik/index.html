@@ -64,6 +64,57 @@
 </head>
 <body>
 
+  <!-- Cookie lišta -->
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+  <div class="cookie-banner__content">
+    <div class="cookie-banner__text">
+      <h4>Tento web používá cookies 🍪</h4>
+      <p>Používáme nezbytné cookies pro správný chod webu a analytické cookies pro zlepšování našich služeb.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept-necessary" class="btn btn--ghost btn--sm">Pouze nezbytné</button>
+      <button id="cookie-accept-all" class="btn btn--primary btn--sm">Povolit vše</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var banner = document.getElementById('cookie-banner');
+    var root   = document.documentElement;
+    if (!banner) return;
+
+    // lišta si „odsune“ místo, aby nepřekrývala pruh s benefity
+    function space(on) {
+      root.style.setProperty('--cookie-space', on ? (banner.offsetHeight + 34) + 'px' : '0px');
+    }
+    function show() { banner.style.display = 'block'; space(true); }
+    function hide(volba) {
+      try { localStorage.setItem('dh_cookie_consent', volba); } catch (e) {}
+      banner.style.display = 'none';
+      space(false);
+    }
+
+    var ulozeno = null;
+    try { ulozeno = localStorage.getItem('dh_cookie_consent'); } catch (e) {}
+    if (!ulozeno) show();
+
+    document.getElementById('cookie-accept-all').addEventListener('click', function () { hide('all'); });
+    document.getElementById('cookie-accept-necessary').addEventListener('click', function () { hide('necessary'); });
+
+    // odkaz „Nastavení cookies“ v patičce lištu znovu zobrazí
+    document.addEventListener('click', function (e) {
+      var odkaz = e.target.closest ? e.target.closest('.js-cookie-settings') : null;
+      if (!odkaz) return;
+      e.preventDefault();
+      try { localStorage.removeItem('dh_cookie_consent'); } catch (err) {}
+      show();
+      banner.scrollIntoView({ block: 'nearest' });
+    });
+  })();
+</script>
+
+
 <div class="topbar">
   <div class="wrap">
     <a class="topbar__badge" href="https://www.firmy.cz/nejlepsi/Prvni-pomoc-a-zdravotnictvi/Zdravotnicke-sluzby/Zdravotnicka-zarizeni/Lekarske-ordinace/Stomatologicke-ordinace/Dentalni-hygiena/kraj-praha" target="_blank" rel="noopener">
@@ -88,7 +139,7 @@
       </a>
       <ul class="nav__links">
         <li><a href="../">Úvod</a></li>
-        <li><a href="../o-mne/">O mně</a></li>
+        <li><a href="../o-mne/">O nás</a></li>
         <li><a href="../#sluzby">Služby</a></li>
         <li><a href="./" class="is-active">Ceník</a></li>
         <li><a href="../kontakt/">Kontakt</a></li>
@@ -238,7 +289,7 @@
     </div>
     <div class="footer__bottom">
       <span>© 2026 DH Letná · Vendula Neuwirthová</span>
-      <span><a href="../zasady-cookies-eu/">Zásady cookies</a> · <a href="../politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a></span>
+      <span><a href="/zasady-cookies-eu/">Zásady cookies</a> · <a href="/politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a> · <a href="/omezeni-odpovednosti/">Omezení odpovědnosti</a> · <a class="js-cookie-settings" href="/zasady-cookies-eu/">Nastavení cookies</a></span>
     </div>
   </div>
 </footer>

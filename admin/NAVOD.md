@@ -4,8 +4,11 @@
 
 Adresa: **https://dh-letna.cz/admin/**
 
-Výchozí heslo: **DHletna2026**
-Po prvním přihlášení si ho prosím změňte dole na stránce v části „Změna hesla“.
+- Přihlašovací jméno: **Wendy_N**
+- Heslo: **Hygiena-Letna-7656**
+
+Heslo se dá kdykoli změnit dole na stránce v části „Změna hesla“.
+Jméno se mění v souboru `admin/config.php` (řádek `ADMIN_USER`).
 
 ## Úprava ceníku
 
@@ -50,11 +53,11 @@ takže když se něco pokazí, dá se to vrátit zkopírováním souborů ze zá
 nastavte práva: soubory `index.html`, `cenik/index.html`, `data/cenik.json` a `admin/config.php`
 na **664**, složky `data` a `data/backups` na **775**.
 
-**Zapomenuté heslo** – smažte v souboru `admin/config.php` řádek s `ADMIN_HASH` a nahraďte ho tímto
-(vrátí heslo na výchozí `DHletna2026`):
+**Zapomenuté heslo** – v souboru `admin/config.php` nahraďte řádek s `ADMIN_HASH` tímto
+(vrátí heslo na `Hygiena-Letna-7656`):
 
 ```php
-define('ADMIN_HASH', '$2y$12$wH3n0ZafB6EgQRmeIUpWW.VCnOMKRsN.kxYqxYQLfu.aVm2F8L.1W');
+define('ADMIN_HASH', '$2y$12$G.ErWVsSPoQDQU7HiTQf8eqDWZl9gni4.f8LTea1Xy4BSWZB3RWTm');
 ```
 
 ## Pozor na jednu věc

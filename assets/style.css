@@ -268,7 +268,9 @@ a { color: var(--mint-600); text-decoration: none; }
   align-items: center;
   overflow: hidden;
   background-color: #a9a096;
-  min-height: clamp(560px, 43vw, 1080px);
+  /* výška se řídí šířkou, ale nikdy nepřeroste okno – pruh s benefity
+     tak zůstane vidět i na nízkých displejích (15" notebooky, 2560x1080) */
+  min-height: clamp(460px, min(43vw, calc(100vh - 262px - var(--cookie-space, 0px))), 1080px);
   padding: 84px 0 104px;
 }
 
@@ -276,7 +278,7 @@ a { color: var(--mint-600); text-decoration: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("img/hero-bg.jpg") no-repeat center center / cover;
+  background: url("img/hero-bg.jpg") no-repeat center 32% / cover;
   z-index: 0;
 }
 /* jemné ztmavení vlevo kvůli čitelnosti bílého textu */
@@ -716,6 +718,91 @@ a { color: var(--mint-600); text-decoration: none; }
   background: linear-gradient(135deg, var(--mint-100), var(--coral-100));
   aspect-ratio: 4/5; box-shadow: var(--shadow-md); display: grid; place-items: center;
 }
+/* ---------- Právní stránky (cookies, GDPR, omezení odpovědnosti) ---------- */
+.legal { max-width: 840px; margin: 0 auto; }
+.legal .card { padding: 42px 46px; }
+.legal h2 {
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 34px 0 10px;
+  letter-spacing: -.005em;
+}
+.legal .card > *:first-child { margin-top: 0; }
+.legal h3 { font-size: 1.04rem; font-weight: 700; margin: 22px 0 6px; }
+.legal p, .legal li { font-size: 1rem; line-height: 1.75; }
+.legal p { margin-bottom: 14px; }
+.legal ul, .legal ol { margin: 0 0 16px; padding-left: 22px; }
+.legal li { margin-bottom: 7px; }
+.legal a { text-decoration: underline; text-underline-offset: 2px; }
+.page-hero .meta { color: var(--muted); font-size: .95rem; }
+
+@media (max-width: 640px) {
+  .legal .card { padding: 26px 22px; }
+  .legal h2 { font-size: 1.18rem; margin-top: 28px; }
+}
+
+/* ---------- Profily na stránce O nás (střídavé rozvržení) ---------- */
+.profil {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 56px;
+  align-items: center;
+}
+.profil--obracene { grid-template-columns: 1.22fr .78fr; }
+
+.profil--obracene .medailon { order: 2; }
+.profil--obracene .profil__text { order: 1; }
+
+.profil__text h2 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 0 0 4px; }
+.profil__role {
+  color: var(--blue-500);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  margin: 0 0 18px !important;
+}
+.profil__text p { margin-bottom: 14px; }
+
+/* prázdný rámeček, dokud není fotka */
+.medailon--prazdny .medailon__img--placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: repeating-linear-gradient(135deg, #eaf1fd, #eaf1fd 12px, #e3ecfb 12px, #e3ecfb 24px);
+  border: 1px dashed #b9d1f4;
+  color: #7b93bd;
+  box-shadow: none;
+}
+.medailon--prazdny .medailon__img--placeholder svg { width: 62px; height: 62px; }
+.medailon--prazdny .medailon__img--placeholder span { font-size: .88rem; font-weight: 500; }
+
+
+/* poznámka, že text teprve vznikne – ať nevypadá jako chyba */
+.profil__pripravujeme {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f2f7fe;
+  border: 1px dashed #cddef7;
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: #56637a;
+  font-size: .95rem;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+.profil__pripravujeme svg { width: 20px; height: 20px; flex: none; color: var(--blue-500); margin-top: 2px; }
+
+@media (max-width: 940px) {
+  .profil, .profil--obracene { grid-template-columns: 1fr; gap: 30px; }
+  .profil--obracene .medailon { order: 0; }
+  .profil--obracene .profil__text { order: 1; }
+  .profil__text { text-align: left; }
+}
+
 /* ---------- Medailonek (stránka O mně) ---------- */
 .medailon {
   position: relative;
@@ -910,15 +997,15 @@ a { color: var(--mint-600); text-decoration: none; }
 /* ---------- Cookie Banner ---------- */
 .cookie-banner {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  max-width: 420px;
-  width: calc(100% - 40px);
+  bottom: 18px;
+  right: 18px;
+  max-width: 660px;
+  width: calc(100% - 36px);
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  padding: 22px 24px;
+  padding: 16px 20px;
   z-index: 999;
   animation: cookieFadeIn .3s ease-out forwards;
 }
@@ -928,17 +1015,22 @@ a { color: var(--mint-600); text-decoration: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+.cookie-banner__content {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
 .cookie-banner__text h4 {
-  font-size: 1rem;
-  margin: 0 0 6px 0;
+  font-size: .95rem;
+  margin: 0 0 3px 0;
   color: var(--ink);
 }
 
 .cookie-banner__text p {
-  font-size: 0.83rem;
-  line-height: 1.45;
+  font-size: 0.82rem;
+  line-height: 1.4;
   color: var(--ink-soft);
-  margin: 0 0 16px 0;
+  margin: 0;
 }
 
 .cookie-banner__text a {
@@ -954,9 +1046,13 @@ a { color: var(--mint-600); text-decoration: none; }
   justify-content: flex-end;
 }
 
-.cookie-banner__actions .btn {
-  flex: 1;
-  text-align: center;
+.cookie-banner__actions { flex: none; }
+.cookie-banner__actions .btn { white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .cookie-banner__content { flex-direction: column; align-items: stretch; gap: 14px; }
+  .cookie-banner__actions { justify-content: stretch; }
+  .cookie-banner__actions .btn { flex: 1; }
 }
 
 @media (max-width: 480px) {
@@ -1049,6 +1145,16 @@ a { color: var(--mint-600); text-decoration: none; }
   .about__grid, .contact__grid { grid-template-columns: 1fr; }
   .grid--3 { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+}
+
+/* --- nízká okna: sevřít hero, ať se pruh s benefity vejde na obrazovku --- */
+@media (min-width: 861px) and (max-height: 860px) {
+  .hero { padding: 40px 0 70px; }
+  .hero .hero__title { font-size: clamp(2.1rem, 3.2vw, 3.1rem) !important; margin-bottom: 20px !important; }
+  .hero__copy .eyebrow { margin-bottom: 16px !important; }
+  .hero p.lead { font-size: .96rem !important; line-height: 1.65 !important; }
+  .hero__actions { margin-top: 26px; }
+  .hero__actions .btn--lg { padding: 15px 28px; font-size: .98rem; }
 }
 
 /* --- hlavička: úzký desktop / tablet (mezi burger menu a plnou šířkou) --- */

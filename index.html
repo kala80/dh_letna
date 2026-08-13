@@ -92,23 +92,37 @@
 </div>
 
 <script>
-  (function() {
+  (function () {
     var banner = document.getElementById('cookie-banner');
-    var btnAll = document.getElementById('cookie-accept-all');
-    var btnNecessary = document.getElementById('cookie-accept-necessary');
+    var root   = document.documentElement;
+    if (!banner) return;
 
-    if (!localStorage.getItem('dh_cookie_consent')) {
-      banner.style.display = 'block';
+    // lišta si „odsune“ místo, aby nepřekrývala pruh s benefity
+    function space(on) {
+      root.style.setProperty('--cookie-space', on ? (banner.offsetHeight + 34) + 'px' : '0px');
+    }
+    function show() { banner.style.display = 'block'; space(true); }
+    function hide(volba) {
+      try { localStorage.setItem('dh_cookie_consent', volba); } catch (e) {}
+      banner.style.display = 'none';
+      space(false);
     }
 
-    btnAll.addEventListener('click', function() {
-      localStorage.setItem('dh_cookie_consent', 'all');
-      banner.style.display = 'none';
-    });
+    var ulozeno = null;
+    try { ulozeno = localStorage.getItem('dh_cookie_consent'); } catch (e) {}
+    if (!ulozeno) show();
 
-    btnNecessary.addEventListener('click', function() {
-      localStorage.setItem('dh_cookie_consent', 'necessary');
-      banner.style.display = 'none';
+    document.getElementById('cookie-accept-all').addEventListener('click', function () { hide('all'); });
+    document.getElementById('cookie-accept-necessary').addEventListener('click', function () { hide('necessary'); });
+
+    // odkaz „Nastavení cookies“ v patičce lištu znovu zobrazí
+    document.addEventListener('click', function (e) {
+      var odkaz = e.target.closest ? e.target.closest('.js-cookie-settings') : null;
+      if (!odkaz) return;
+      e.preventDefault();
+      try { localStorage.removeItem('dh_cookie_consent'); } catch (err) {}
+      show();
+      banner.scrollIntoView({ block: 'nearest' });
     });
   })();
 </script>
@@ -138,7 +152,7 @@
       </a>
       <ul class="nav__links">
         <li><a href="/" class="is-active">Úvod</a></li>
-        <li><a href="o-mne/">O mně</a></li>
+        <li><a href="o-mne/">O nás</a></li>
         <li><a href="#sluzby">Služby</a></li>
         <li><a href="cenik/">Ceník</a></li>
         <li><a href="kontakt/">Kontakt</a></li>
@@ -503,7 +517,7 @@
     </div>
     <div class="footer__bottom">
       <span>© 2026 DH Letná · Vendula Neuwirthová</span>
-      <span><a href="zasady-cookies-eu/">Zásady cookies</a> · <a href="politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a></span>
+      <span><a href="/zasady-cookies-eu/">Zásady cookies</a> · <a href="/politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a> · <a href="/omezeni-odpovednosti/">Omezení odpovědnosti</a> · <a class="js-cookie-settings" href="/zasady-cookies-eu/">Nastavení cookies</a></span>
     </div>
   </div>
 </footer>

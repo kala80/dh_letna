@@ -1,12 +1,16 @@
 <?php
 // ============================================================
 //  DH Letná – nastavení administrace ceníku
+//  https://dh-letna.cz/admin/
 // ============================================================
 
-// Přihlašovací heslo (uloženo bezpečně jako hash, ne čitelně).
-// Výchozí heslo je:  DHletna2026
-// Po prvním přihlášení si ho prosím změňte přímo v administraci.
-define('ADMIN_HASH', '$2y$12$wH3n0ZafB6EgQRmeIUpWW.VCnOMKRsN.kxYqxYQLfu.aVm2F8L.1W');
+// Přihlašovací jméno.
+define('ADMIN_USER', 'Wendy_N');
+
+// Heslo je uložené bezpečně jako otisk (hash), ne čitelně.
+// Nastavené heslo:  Hygiena-Letna-7656
+// Změnit se dá přímo v administraci dole v části „Změna hesla“.
+define('ADMIN_HASH', '$2y$12$G.ErWVsSPoQDQU7HiTQf8eqDWZl9gni4.f8LTea1Xy4BSWZB3RWTm');
 
 // Kolik záloh ceníku se má uchovávat (starší se mažou automaticky).
 define('BACKUP_KEEP', 20);
