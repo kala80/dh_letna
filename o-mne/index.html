@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O mně – Vendula Neuwirthová | Dentální hygiena Letná</title>
-<meta name="description" content="Vendula Neuwirthová, dentální hygienistka na Letné (Praha 7). Spolupracuje s MUDr. Šárkou Pešatovou a MUDr. Jitkou Pražákovou.">
+<title>O nás – dentální hygienistky | DH Letná, Praha 7</title>
+<meta name="description" content="Vendula Neuwirthová a Aneda Prokopová – dentální hygienistky na Letné (Praha 7). Šetrná a precizní péče o váš úsměv.">
 <link rel="canonical" href="https://dh-letna.cz/o-mne/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#276ad6">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="DH Letná – dentální hygiena">
 <meta property="og:title" content="Kontakt – dentální hygiena Letná, Praha 7">
-<meta property="og:description" content="Ordinace dentální hygieny na Letné, Praha 7. Vchod z ulice Kostelní. Objednejte se online.">
+<meta property="og:description" content="Vendula Neuwirthová a Aneda Prokopová – dentální hygienistky na Letné (Praha 7).">
 <meta property="og:url" content="https://dh-letna.cz/kontakt/">
 <meta property="og:image" content="https://dh-letna.cz/assets/img/og-share.jpg">
 <meta property="og:image:width" content="1200">
@@ -64,12 +64,63 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://dh-letna.cz/" },
-    { "@type": "ListItem", "position": 2, "name": "O mně", "item": "https://dh-letna.cz/o-mne/" }
+    { "@type": "ListItem", "position": 2, "name": "O nás", "item": "https://dh-letna.cz/o-mne/" }
   ]
 }
 </script>
 </head>
 <body>
+
+  <!-- Cookie lišta -->
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+  <div class="cookie-banner__content">
+    <div class="cookie-banner__text">
+      <h4>Tento web používá cookies 🍪</h4>
+      <p>Používáme nezbytné cookies pro správný chod webu a analytické cookies pro zlepšování našich služeb.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept-necessary" class="btn btn--ghost btn--sm">Pouze nezbytné</button>
+      <button id="cookie-accept-all" class="btn btn--primary btn--sm">Povolit vše</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var banner = document.getElementById('cookie-banner');
+    var root   = document.documentElement;
+    if (!banner) return;
+
+    // lišta si „odsune“ místo, aby nepřekrývala pruh s benefity
+    function space(on) {
+      root.style.setProperty('--cookie-space', on ? (banner.offsetHeight + 34) + 'px' : '0px');
+    }
+    function show() { banner.style.display = 'block'; space(true); }
+    function hide(volba) {
+      try { localStorage.setItem('dh_cookie_consent', volba); } catch (e) {}
+      banner.style.display = 'none';
+      space(false);
+    }
+
+    var ulozeno = null;
+    try { ulozeno = localStorage.getItem('dh_cookie_consent'); } catch (e) {}
+    if (!ulozeno) show();
+
+    document.getElementById('cookie-accept-all').addEventListener('click', function () { hide('all'); });
+    document.getElementById('cookie-accept-necessary').addEventListener('click', function () { hide('necessary'); });
+
+    // odkaz „Nastavení cookies“ v patičce lištu znovu zobrazí
+    document.addEventListener('click', function (e) {
+      var odkaz = e.target.closest ? e.target.closest('.js-cookie-settings') : null;
+      if (!odkaz) return;
+      e.preventDefault();
+      try { localStorage.removeItem('dh_cookie_consent'); } catch (err) {}
+      show();
+      banner.scrollIntoView({ block: 'nearest' });
+    });
+  })();
+</script>
+
 
 <div class="topbar">
   <div class="wrap">
@@ -95,7 +146,7 @@
       </a>
       <ul class="nav__links">
         <li><a href="../">Úvod</a></li>
-        <li><a href="./" class="is-active">O mně</a></li>
+        <li><a href="./" class="is-active">O nás</a></li>
         <li><a href="../#sluzby">Služby</a></li>
         <li><a href="../cenik/">Ceník</a></li>
         <li><a href="../kontakt/">Kontakt</a></li>
@@ -111,10 +162,21 @@
 <main id="obsah">
 
 
-<!-- ============ ABOUT ============ -->
-<section class="section section--tint">
+<!-- ============ O NÁS ============ -->
+<section class="section section--tint" style="padding-bottom:60px;">
   <div class="wrap">
-    <div class="about__grid">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow--coral">O nás</span>
+      <h1>Kdo se o váš úsměv postará</h1>
+      <p>Dvě dentální hygienistky, jeden přístup — šetrně, moderně a s respektem k vašim obavám.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Vendula -->
+<section class="section section--tint" style="padding-top:0;padding-bottom:70px;">
+  <div class="wrap">
+    <div class="profil">
       <figure class="medailon reveal">
         <div class="medailon__img">
           <picture>
@@ -133,9 +195,9 @@
           </div>
         </figcaption>
       </figure>
-      <div class="reveal">
-        <span class="eyebrow eyebrow--coral">O mně</span>
-        <h1>Vendula Neuwirthová, dentální hygienistka</h1>
+      <div class="profil__text reveal">
+        <h2>Vendula Neuwirthová</h2>
+        <p class="profil__role">Dentální hygienistka, DiS.</p>
         <p>Pocházím z Jindřichova Hradce a vystudovala jsem Vyšší odbornou zdravotnickou školu pro dentální hygienistky v Praze, kde dnes také učím praktickou výuku budoucích hygienistek.</p>
         <p>Jsem členkou <strong>Asociace dentálních hygienistek</strong> a pravidelně se účastním odborných přednášek, kurzů a seminářů, abych svým pacientům nabídla péči na aktuální úrovni poznání.</p>
         <p>Mou předností je osobní a vstřícný přístup ke všem klientům, trpělivost a preciznost při práci.</p>
@@ -145,6 +207,41 @@
           <span class="badge">Externí vyučující</span>
           <span class="badge">Asociace dentálních hygienistek</span>
           <span class="badge">Průběžné vzdělávání</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aneda – obrácené pořadí (fotka vpravo) -->
+<section class="section section--tint" style="padding-top:0;">
+  <div class="wrap">
+    <div class="profil profil--obracene">
+      <figure class="medailon medailon--prazdny reveal">
+        <div class="medailon__img medailon__img--placeholder" role="img" aria-label="Fotografie se připravuje">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Fotografie se připravuje</span>
+        </div>
+        <figcaption class="medailon__meta">
+          <div class="medailon__name">
+            <b>Aneda Prokopová</b>
+            <span>Dentální hygienistka, DiS.</span>
+          </div>
+        </figcaption>
+      </figure>
+      <div class="profil__text reveal">
+        <h2>Aneda Prokopová</h2>
+        <p class="profil__role">Dentální hygienistka, DiS.</p>
+        <p>Vystudovala jsem obor <strong>Diplomovaná dentální hygienistka</strong> na VOŠ zdravotnické v Plzni a v současnosti pracuji na klinice ZvolanekDental, zaměřené na protetiku. Předchozí zkušenosti jsem získala v soukromé parodontologické ordinaci MUDr. Karnoldové a během stáže v ortodontické ordinaci MUDr. Mileny Paruchové.</p>
+        <p>Mou předností je komunikace s pacienty, trpělivost a empatie.</p>
+        <p>Teď se těším, že svou novou kapitolu začínám právě tady u vás – budu vám ráda k dispozici a udělám vše pro to, abych se o vás i o vaše zdraví postarala s péčí a citem.</p>
+        <div class="about__badges">
+          <span class="badge">VOŠ zdravotnická Plzeň</span>
+          <span class="badge">Parodontologie</span>
+          <span class="badge">Ortodoncie</span>
+          <span class="badge">Protetika</span>
         </div>
       </div>
     </div>
@@ -190,7 +287,7 @@
     </div>
     <div class="footer__bottom">
       <span>© 2026 DH Letná · Vendula Neuwirthová</span>
-      <span><a href="../zasady-cookies-eu/">Zásady cookies</a> · <a href="../politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a></span>
+      <span><a href="/zasady-cookies-eu/">Zásady cookies</a> · <a href="/politika-ochrany-osobnich-udaju/">Ochrana osobních údajů</a> · <a href="/omezeni-odpovednosti/">Omezení odpovědnosti</a> · <a class="js-cookie-settings" href="/zasady-cookies-eu/">Nastavení cookies</a></span>
     </div>
   </div>
 </footer>
